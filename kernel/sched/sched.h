@@ -1390,6 +1390,7 @@ static inline void inc_nr_running(struct rq *rq)
 	nr_stats->ave_nr_running = do_avg_nr_running(rq);
 	nr_stats->nr_last_stamp = rq->clock_task;
 #endif
+	sched_update_nr_prod(cpu_of(rq), 1, true);
 	rq->nr_running++;
 #ifdef CONFIG_INTELLI_PLUG
 	write_seqcount_end(&nr_stats->ave_seqcnt);
@@ -1413,7 +1414,7 @@ static inline void inc_nr_running(struct rq *rq)
 
 static inline void dec_nr_running(struct rq *rq)
 {
-	sched_update_nr_prod(cpu_of(rq), rq->nr_running, false);
+	sched_update_nr_prod(cpu_of(rq), 1, false);
 	rq->nr_running--;
 }
 
