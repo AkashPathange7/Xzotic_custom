@@ -265,6 +265,8 @@ const char *cpufreq_get_current_driver(void);
 
 void cpufreq_notify_utilization(struct cpufreq_policy *policy, unsigned int load);
 
+void cpufreq_notify_utilization(struct cpufreq_policy *policy, unsigned int load);
+
 static inline void cpufreq_verify_within_limits(struct cpufreq_policy *policy,
 		unsigned int min, unsigned int max)
 {
@@ -452,6 +454,9 @@ extern struct cpufreq_governor cpufreq_gov_pegasusq;
 #elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_HYPER)
 extern struct cpufreq_governor cpufreq_gov_hyper;
 #define CPUFREQ_DEFAULT_GOVERNOR        (&cpufreq_gov_hyper)
+#elif defined(CONFIG_CPU_FREQ_DEFAULT_GOV_DARKNESS)
+extern struct cpufreq_governor cpufreq_gov_darkness;
+#define CPUFREQ_DEFAULT_GOVERNOR (&cpufreq_gov_darkness)
 #endif
 
 /*********************************************************************
