@@ -229,6 +229,14 @@ config CPU_FREQ_DEFAULT_GOV_DESPAIR
 	select CPU_FREQ_GOV_DESPAIR
 	help
 
+config CPU_FREQ_DEFAULT_GOV_DARK_STEALTH
+	bool "dark_stealth"
+	select CPU_FREQ_GOV_DARK_STEALTH
+	help
+	  Using the CPUFreq governor 'dark_stealth' as default allows
+	  you to get a full dynamic cpu frequency capable system by simply
+	  loading your cpufreq low-level hardware driver
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -397,6 +405,13 @@ config CPU_FREQ_GOV_DESPAIR
 config CPU_FREQ_GOV_WHEATLEY
 	tristate "'wheatley' cpufreq governor"
 	depends on CPU_FREQ
+
+config CPU_FREQ_GOV_DARK_STEALTH
+	tristate "'dark_stealth' cpufreq policy governor"
+	help
+	  'dark_stealth' - This driver is used for full latency sensitive control over CPU
+	  
+	  If in doubt, say N.
 
 config CPU_BOOST
 	tristate "Event base short term CPU freq boost"
