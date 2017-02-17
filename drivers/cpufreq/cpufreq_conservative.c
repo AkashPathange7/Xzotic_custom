@@ -78,16 +78,6 @@ static void cs_check_cpu(int cpu, unsigned int load)
 		if (policy->cur == policy->max)
 			return;
 
-		if (load < cs_tuners->up_threshold && dbs_info->twostep_counter++ < 2) {
-			dbs_info->twostep_time = now;
-			dbs_info->requested_freq += get_freq_target(cs_tuners, policy->max >> 1);
-		} else {
-			if (load >= cs_tuners->up_threshold)
-				dbs_info->requested_freq += get_freq_target(cs_tuners, policy->max);
-
-			dbs_info->twostep_counter = 0;
-		}
-
 		if (dbs_info->requested_freq > policy->max)
 			dbs_info->requested_freq = policy->max;
 
@@ -114,11 +104,6 @@ static void cs_check_cpu(int cpu, unsigned int load)
 		 * we're scaling down, so reset the counter if
 		 * the conditions are met
 		 */
-		if (dbs_info->twostep_counter) {
-			/* 150ms*/
-			if ((now - dbs_info->twostep_time) >= 150000)
-                		dbs_info->twostep_counter = 0;
-		}
 
 		/*
 		 * if we cannot reduce the frequency anymore, break out early
