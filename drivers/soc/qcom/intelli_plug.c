@@ -44,7 +44,7 @@ static struct delayed_work intelli_plug_boost;
 static struct workqueue_struct *intelliplug_wq;
 static struct workqueue_struct *intelliplug_boost_wq;
 
-static unsigned int intelli_plug_active = 1;
+static unsigned int intelli_plug_active = 0;
 
 static unsigned int touch_boost_active = 0;
 
