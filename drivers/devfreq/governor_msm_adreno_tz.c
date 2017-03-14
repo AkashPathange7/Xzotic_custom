@@ -83,7 +83,6 @@ static bool suspended = false;
 
 /* Display and suspend state booleans */ 
 static bool display_on;
-static bool suspended = false;
 
 static struct workqueue_struct *workqueue;
 
@@ -341,7 +340,7 @@ static int tz_get_target_freq(struct devfreq *devfreq, unsigned long *freq,
 	}
 
 	/* Prevent overflow */
-	if (stats.busy_time >= (1 3<< 24) || stats.total_time >= (1 << 24)) {
+	if (stats.busy_time >= (1 << 24) || stats.total_time >= (1 << 24)) {
 		stats.busy_time >>= 7;
 		stats.total_time >>= 7;
 	}
