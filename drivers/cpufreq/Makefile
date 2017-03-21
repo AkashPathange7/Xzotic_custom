@@ -45,6 +45,14 @@ obj-$(CONFIG_CPU_FREQ_GOV_DARK_STEALTH)  += cpufreq_dark_stealth.o
 obj-$(CONFIG_CPU_FREQ_GOV_IMPULSE)	+= cpufreq_impulse.o
 obj-$(CONFIG_CPU_FREQ_GOV_CONSERVATIVEX) += cpufreq_conservativex.o
 obj-$(CONFIG_CPU_FREQ_GOV_SMARTASS2)  += cpufreq_smartass2.o
+obj-$(CONFIG_CPU_FREQ_GOV_DYNAMIC_INTERACTIVE) += cpufreq_dynamic_interactive.o
+obj-$(CONFIG_CPU_FREQ_GOV_TRIPNDROID)	+= cpufreq_tripndroid.o
+obj-$(CONFIG_CPU_FREQ_GOV_XPERIENCE)	+= cpufreq_xperience.o
+obj-$(CONFIG_CPU_FREQ_GOV_ELECTRODEMAND) += cpufreq_electrodemand.o
+obj-$(CONFIG_CPU_FREQ_GOV_SMARTASSH3)	+= cpufreq_smartassH3.o
+obj-$(CONFIG_CPU_FREQ_GOV_MYTHX_PLUG)	+= cpufreq_mythx_plug.o
+obj-$(CONFIG_CPU_FREQ_GOV_LULZACTIVE)	+= cpufreq_lulzactive.o
+obj-$(CONFIG_CPU_FREQ_GOV_WAVE)	        += cpufreq_wave.o
 obj-$(CONFIG_CPU_BOOST)			+= cpu-boost.o
 
 obj-$(CONFIG_CPU_FREQ_GOV_HYPERX)  	   += cpufreq_hyperx.o
