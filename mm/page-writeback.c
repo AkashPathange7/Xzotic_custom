@@ -1748,9 +1748,6 @@ static void set_dirty_writeback_status(bool active) {
 								dirty_writeback_active_interval :
 								dirty_writeback_suspend_interval;
 
-	/* Update the timer related to dirty writebacks interval */
-	bdi_arm_supers_timer();
-
 	/* Print debug info */
 	pr_debug("%s: Set dirty_writeback_interval = %d centisecs\n",
 				__func__, dirty_writeback_interval);
