@@ -686,6 +686,10 @@ CONFIG_CRYPTO_AES_ARM64_CE_BLK=y
 CONFIG_CRYPTO_AES_ARM64_NEON_BLK=y
 CONFIG_QMI_ENCDEC=y
 
+#------------------------------------------------------------------------------#
+#                               XzoTic-Kernel                                  #
+#------------------------------------------------------------------------------#
+
 #FEATURES
 CONFIG_INTELLI_PLUG=y
 CONFIG_ASMP=y
@@ -701,6 +705,12 @@ CONFIG_DYNAMIC_PAGE_WRITEBACK=y
 CONFIG_INTELLI_THERMAL=y
 CONFIG_HAS_MACH_MEMUTILS=y
 CONFIG_WQ_POWER_EFFICIENT_DEFAULT=y
+CONFIG_HAVE_KERNEL_GZIP=y
+CONFIG_HAVE_KERNEL_LZMA=y
+CONFIG_HAVE_KERNEL_XZ=y
+# CONFIG_KERNEL_GZIP is not set
+# CONFIG_KERNEL_LZMA is not set
+CONFIG_KERNEL_XZ=y
 
 #I/O
 CONFIG_IOSCHED_FIOPS=y
