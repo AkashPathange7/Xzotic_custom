@@ -1,7 +1,7 @@
 VERSION = 3
 PATCHLEVEL = 10
 SUBLEVEL = 108
-EXTRAVERSION = END-OF-LIFE
+EXTRAVERSION = -END-OF-LIFE
 NAME = END-OF-LIFE
 
 # *DOCUMENTATION*
@@ -383,6 +383,8 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
                    -Wno-switch-unreachable \
 		   -fno-delete-null-pointer-checks \
 		   -std=gnu89
+
+KBUILD_CFLAGS   += -mcpu=cortex-a53
 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
